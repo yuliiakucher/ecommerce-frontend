@@ -1,4 +1,4 @@
-const API_BASE_URL = '/api';
+const API_BASE_URL = 'http://localhost:8080';
 
 export class ApiError extends Error {
   constructor(
@@ -62,3 +62,5 @@ export const api = {
   delete: <T>(endpoint: string, options?: RequestOptions) =>
     request<T>(endpoint, { ...options, method: 'DELETE' }),
 };
+
+export const getAllProducts = <T>() => api.get<T[]>('/products');
