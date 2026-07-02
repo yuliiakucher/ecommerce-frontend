@@ -1,11 +1,12 @@
 import { useQuery } from '@tanstack/react-query';
 import { getAllProducts } from '@/api/client.ts';
 import { productKeys } from '@/api/query-keys';
+import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
 
 // TODO: move to src/types when your backend types stabilize
 interface Product {
   id: string;
-  name: string;
+  title: string;
   price: number;
   description: string;
 }
@@ -16,17 +17,21 @@ export function ProductsPage() {
 
   return (
     <div>
-      <h1 className="text-2xl font-bold">Products</h1>
+      <h1 className="text-5xl text-primary">DISCOVER EVERYTHING YOU NEED IN ONE PLACE</h1>
       <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {query.data?.map((product) => (
-          <div
-            key={product.id}
-            className="rounded-lg border border-slate-200 bg-white p-4"
-          >
-            <h2 className="font-semibold">{product.name}</h2>
-            <p className="mt-1 text-sm text-slate-500">{product.description}</p>
-            <p className="mt-2 font-medium">${product.price.toFixed(2)}</p>
-          </div>
+          <Card key={product.id}>
+            <img
+              src="public/img/product-placeholder.webp"
+              alt={product.title}
+            />
+            <CardHeader className="text-primary">
+              <CardTitle className="flex justify-between">
+                <a className="uppercase">{product.title}</a><a>${product.price.toFixed(2)}</a>
+              </CardTitle>
+              <CardDescription>{product.description}</CardDescription>
+            </CardHeader>
+          </Card>
         ))}
       </div>
     </div>

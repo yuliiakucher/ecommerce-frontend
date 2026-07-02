@@ -1,0 +1,10 @@
+{
+  "menu": {
+    "discover": "discover",
+    "apparel": "apparel",
+    "bags": "bags",
+    "shoes": "shoes",
+    "holidayPicks": "Holiday Picks",
+    "others": "others"
+  }
+}
