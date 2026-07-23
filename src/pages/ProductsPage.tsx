@@ -1,7 +1,7 @@
-import { useQuery } from '@tanstack/react-query';
+import { queryOptions, useQuery } from '@tanstack/react-query';
 import { getAllProducts } from '@/api/client.ts';
 import { productKeys } from '@/api/query-keys';
-import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
+import { Card, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 
 // TODO: move to src/types when your backend types stabilize
 interface Product {
@@ -13,7 +13,12 @@ interface Product {
 
 export function ProductsPage() {
 
-  const query = useQuery({ queryKey: productKeys.list(), queryFn: () => getAllProducts<Product>() });
+  const getAllProductsQueryOptions = () => queryOptions({
+    queryKey: productKeys.list(),
+    queryFn: () => getAllProducts<Product>(),
+  });
+
+  const query = useQuery(getAllProductsQueryOptions());
 
   return (
     <div>

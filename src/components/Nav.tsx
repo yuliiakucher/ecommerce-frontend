@@ -2,7 +2,7 @@ import { NavigationMenu, NavigationMenuItem, NavigationMenuList } from '@/compon
 import { useTranslation } from 'react-i18next';
 
 function Nav() {
-  const { t } = useTranslation("nav");
+  const { t } = useTranslation();
 
   return (
 
@@ -11,7 +11,7 @@ function Nav() {
         <NavigationMenuItem>
           <img src="public/img/logo.webp" alt="logo" className='w-52'/>
         </NavigationMenuItem>
-        <NavigationMenuItem>{t('menu.discover')}</NavigationMenuItem>
+        <NavigationMenuItem>{t('nav:menu.discover')}</NavigationMenuItem>
         <NavigationMenuItem></NavigationMenuItem>
         <NavigationMenuItem></NavigationMenuItem>
         <NavigationMenuItem></NavigationMenuItem>
