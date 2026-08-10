@@ -1,0 +1,10 @@
+<svg width="220" height="56" viewBox="0 0 320 80" xmlns="http://www.w3.org/2000/svg" role="img">
+    <title>Discover logo</title>
+    <g>
+        <circle cx="34" cy="40" r="30" fill="#F0EDED" stroke="#3C2415" stroke-width="1.5"/>
+        <polygon points="34,15 41,40 34,46 27,40" fill="#3C2415"/>
+        <polygon points="34,65 27,40 34,34 41,40" fill="#E8845C"/>
+        <circle cx="34" cy="40" r="3.5" fill="#F0EDED" stroke="#3C2415" stroke-width="1.2"/>
+    </g>
+    <text x="78" y="51" font-family="'DM Serif Display', Georgia, 'Times New Roman', serif" font-size="34" fill="#3C2415">Discover</text>
+</svg>
